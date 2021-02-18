@@ -61,11 +61,9 @@ export class TodoList {
     const todolist = document.createElement("li");
     todolist.classList.add("todo__list", "noselect");
     todolist.innerHTML = `
-      <label class ="${
-        isdone === true ? "isDone" : ""
-      }"><input type="checkbox" name="todo " ${
-      isdone === true ? "checked" : ""
-    }/> ${contents}</label>
+      <label class ="${isdone === true ? "isDone" : ""
+      }"><input type="checkbox" name="todo " ${isdone === true ? "checked" : ""
+      }/> ${contents}</label>
       <i class="fas fa-trash-alt"></i>
     `;
     return todolist;
@@ -78,7 +76,6 @@ export class TodoList {
       const label = element.querySelector("label");
 
       const onlyText = toDosText.trim();
-
       const isDone = label.classList.contains("isDone");
       const toDosObj = {
         contents: onlyText,
@@ -88,7 +85,6 @@ export class TodoList {
     });
 
     const viewdays = this.eventTarget.querySelector("div");
-
     if (toDos_array.length < 1) {
       localStorage.removeItem(PageDate);
       viewdays.classList.remove("presentTodo");

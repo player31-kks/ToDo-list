@@ -6,20 +6,20 @@ const input = form.querySelector("input");
 
 function loadName() {
   const currentUser = localStorage.getItem("currentUser");
-  if (currentUser) {
-  } else {
+  if (!currentUser) {
     askForName();
     whatisyourname.classList.remove("hidden");
   }
+
   const currentUserName = localStorage.getItem("currentUser");
   calenderName.textContent = `Hi ${currentUserName}`;
 }
 
 function submitName() {
   const currentValue = input.value;
-
   localStorage.setItem("currentUser", currentValue);
 }
+
 function askForName() {
   form.addEventListener("submit", () => {
     submitName();
