@@ -119,7 +119,6 @@ class Calendar {
     this.drawPrevMonth(firstDay, DaysInLastMonth)
 
   }
-
   showLastMonth = () => {
     const lastWeek = this.viewDays[this.firstDay + this.DaysInMonth - 1].parentElement.parentElement;
     if (lastWeek.classList.contains("blockline6")) {
