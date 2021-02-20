@@ -54,7 +54,6 @@ export class TodoList {
     const Year = d.slice(0, 4);
     const Month = parseInt(d.slice(4, 6));
     const Day = parseInt(d.slice(6, d.length));
-
     return `${Year}년 ${Month}월 ${Day}일`;
   }
   paintTodolist(contents, isdone) {
@@ -74,7 +73,6 @@ export class TodoList {
     todoLi.forEach((element) => {
       const toDosText = element.textContent;
       const label = element.querySelector("label");
-
       const onlyText = toDosText.trim();
       const isDone = label.classList.contains("isDone");
       const toDosObj = {
@@ -98,7 +96,6 @@ export class TodoList {
     const toDos = localStorage.getItem(date);
     if (toDos !== null) {
       const parsedToDos = JSON.parse(toDos);
-
       parsedToDos.forEach((element) => {
         const contents = element.contents;
         const Done = element.isDone;
