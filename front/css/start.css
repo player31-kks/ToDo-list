@@ -1,0 +1,38 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Nanum Myeongjo", serif;
+}
+.login__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+.login__title {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+.login__kakao {
+  border: none;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+.login__kakao:hover {
+  transform: scale(1.1);
+}
