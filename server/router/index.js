@@ -1,7 +1,10 @@
 const { Router } = require("express")
-const Todolist = require('./Todolist')
+const todolist = require('./Todolist')
+const auth = require('./Auth')
 
 router = Router()
-router.use('/todo', Todolist)
+router.use('/todo', todolist)
+router.use('/auth', auth)
+
 
 module.exports = router

@@ -1,5 +1,5 @@
 const { Router } = require("express")
-const { Todolist } = require('../../model')
+const { Todolist } = require('../model')
 const { Types } = require("mongoose");
 
 TodolistRouter = Router()

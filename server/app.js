@@ -2,6 +2,7 @@ const express = require('express')
 const http = require('http')
 const router = require('./router')
 const mongoose = require('mongoose')
+const path = require('path')
 const dotenv = require("dotenv").config()
 
 
@@ -22,8 +23,22 @@ export class App extends http.Server {
   }
 
   setMiddelWare() {
+    this.app.use(morgan('dev'));
+    this.app.use(express.static(path.join(__dirname, 'view/css')));
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: false }));
+    this.app.use(cookieParser(process.env.COOKIE_SECRET));
+    this.app.use(session({
+      resave: false,
+      saveUninitialized: false,
+      secret: process.env.COOKIE_SECRET,
+      cookie: {
+        httpOnly: true,
+        secure: false,
+      },
+    }));
+    this.app.use(passport.initialize())
+    this.app.use(passport.session())
   }
 
   setRouter() {
